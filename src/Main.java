@@ -1,3 +1,6 @@
+import ict301.solide.OCP.solution.CircleOCP;
+import ict301.solide.OCP.solution.RectangleOCP;
+import ict301.solide.OCP.solution.Shape;
 import ict301.solide.OCP.violation.AreaCalculator;
 import ict301.solide.OCP.violation.Circle;
 import ict301.solide.OCP.violation.Rectangle;
@@ -31,13 +34,21 @@ public class Main {
         BookBusinessLogic bookBusinessLogic = new BookBusinessLogic();
         bookBusinessLogic.emprunter(bookSRP,"fadil");
         bookBusinessLogic.autreService(bookSRP);
-
-        System.out.println("\n====== IMPLEMENTATION DU OPEN CLOSED PRINCIPE =======\n");
+// implementation du OCP avec violation
+        System.out.println("\n====== IMPLEMENTATION DU OPEN CLOSED PRINCIPE avec Violation  =======\n");
         AreaCalculator areaCalculator = new AreaCalculator();
         Circle circle = new Circle(25);
         Rectangle rectangle = new Rectangle(45.5,23.5);
         System.out.println("Aire du rectangle : "+areaCalculator.calculateArea(rectangle));
         System.out.println("Aire du cercle :"+areaCalculator.calculateArea(circle));
+
+        // OCP avec Refactoring
+        Shape shapeR = new RectangleOCP(4,5);
+        Shape shapeC = new CircleOCP(24);
+        System.out.println("Aire du rectangle : "+ shapeR.calculateArea());
+        System.out.println("Aire du cercle :"+shapeC.calculateArea());
+        System.out.println("\n====== IMPLEMENTATION DU OPEN CLOSED PRINCIPE avec Refactoring  =======\n");
+
 
 
         /*Scanner scanner = new Scanner(System.in);
