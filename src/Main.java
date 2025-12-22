@@ -1,3 +1,6 @@
+import ict301.solide.LSP.solution.RectangleLspS;
+import ict301.solide.LSP.solution.ShapeLsp;
+import ict301.solide.LSP.solution.SquareLsp;
 import ict301.solide.LSP.violation.RectangleLspV;
 import ict301.solide.LSP.violation.Square;
 import ict301.solide.OCP.solution.CircleOCP;
@@ -64,6 +67,11 @@ public class Main {
         square.setWidth(7);
         System.out.println("\n L'aire du rectangle est : "+square.getArea());
 
+        // mplementation du LSP dans le main avec refactoring
+        ShapeLsp squareLsp = new SquareLsp(3);
+        ShapeLsp rectangleLsp = new RectangleLspS(4,7);
+        System.out.println("\n L'aire du rectangle est : "+rectangleLsp.getArea());
+        System.out.println("\n L'aire du rectangle est : "+squareLsp.getArea());
 
 
         /*Scanner scanner = new Scanner(System.in);
