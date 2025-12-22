@@ -1,3 +1,5 @@
+import ict301.solide.LSP.violation.RectangleLspV;
+import ict301.solide.LSP.violation.Square;
 import ict301.solide.OCP.solution.CircleOCP;
 import ict301.solide.OCP.solution.RectangleOCP;
 import ict301.solide.OCP.solution.Shape;
@@ -48,6 +50,19 @@ public class Main {
         System.out.println("Aire du rectangle : "+ shapeR.calculateArea());
         System.out.println("Aire du cercle :"+shapeC.calculateArea());
         System.out.println("\n====== IMPLEMENTATION DU OPEN CLOSED PRINCIPE avec Refactoring  =======\n");
+
+
+// implementation du LSP dans le main avec violation .
+        RectangleLspV rectangleLspV = new RectangleLspV();
+        rectangleLspV.setWidth(5);
+        rectangleLspV.setHeight(8);
+        System.out.println("\n L'aire du rectangle est : "+rectangleLspV.getArea());
+        // avec un carree :
+
+        RectangleLspV square = new Square();
+        square.setHeight(5);
+        square.setWidth(7);
+        System.out.println("\n L'aire du rectangle est : "+square.getArea());
 
 
 
