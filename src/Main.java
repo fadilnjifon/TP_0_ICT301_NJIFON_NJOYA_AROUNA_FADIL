@@ -1,3 +1,6 @@
+import ict301.solide.OCP.violation.AreaCalculator;
+import ict301.solide.OCP.violation.Circle;
+import ict301.solide.OCP.violation.Rectangle;
 import ict301.solide.SRP.solution.BookBusinessLogic;
 import ict301.solide.SRP.solution.BookPrinter;
 import ict301.solide.SRP.solution.BookSRP;
@@ -28,6 +31,15 @@ public class Main {
         BookBusinessLogic bookBusinessLogic = new BookBusinessLogic();
         bookBusinessLogic.emprunter(bookSRP,"fadil");
         bookBusinessLogic.autreService(bookSRP);
+
+        System.out.println("\n====== IMPLEMENTATION DU OPEN CLOSED PRINCIPE =======\n");
+        AreaCalculator areaCalculator = new AreaCalculator();
+        Circle circle = new Circle(25);
+        Rectangle rectangle = new Rectangle(45.5,23.5);
+        System.out.println("Aire du rectangle : "+areaCalculator.calculateArea(rectangle));
+        System.out.println("Aire du cercle :"+areaCalculator.calculateArea(circle));
+
+
         /*Scanner scanner = new Scanner(System.in);
         int choix = 0;
         System.out.println("=== BIENVENUE DANS LE TESTEUR SOLID ===");
