@@ -1,3 +1,7 @@
+import ict301.solide.DIP.solution.Database;
+import ict301.solide.DIP.solution.MongoDBDatabase;
+import ict301.solide.DIP.solution.MySQLDatabaseDIP;
+import ict301.solide.DIP.solution.OrderProcessorDIP;
 import ict301.solide.DIP.violation.MySQLDatabase;
 import ict301.solide.DIP.violation.OrderProcessor;
 import ict301.solide.ISP.solution.HumanWorkerISP;
@@ -99,6 +103,16 @@ public class Main {
         // Implementation du DIP avec violation
         OrderProcessor order = new OrderProcessor();
         order.processOrder("donnees a sauvegarder ");
+
+        // implementation du DIP avec Rifactoring
+
+        Database database;
+        database = new MySQLDatabaseDIP();
+        OrderProcessorDIP orderProcessorDIP = new OrderProcessorDIP(database);
+        orderProcessorDIP.processorOrder("Donnees sauvegarder");
+        database = new MongoDBDatabase();
+        OrderProcessorDIP orderProcessorDIP1 = new OrderProcessorDIP(database);
+        orderProcessorDIP1.processorOrder("Donnees a sauvegarder ");
 
 
 
