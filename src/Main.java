@@ -1,3 +1,5 @@
+import ict301.solide.ISP.violation.HumainWorker;
+import ict301.solide.ISP.violation.RobotWorker;
 import ict301.solide.LSP.solution.RectangleLspS;
 import ict301.solide.LSP.solution.ShapeLsp;
 import ict301.solide.LSP.solution.SquareLsp;
@@ -72,6 +74,15 @@ public class Main {
         ShapeLsp rectangleLsp = new RectangleLspS(4,7);
         System.out.println("\n L'aire du rectangle est : "+rectangleLsp.getArea());
         System.out.println("\n L'aire du rectangle est : "+squareLsp.getArea());
+
+        // implementatiion du ISP avec Violation
+
+        HumainWorker humainWorker = new HumainWorker();
+        RobotWorker robotWorker = new RobotWorker();
+        robotWorker.eat();
+        robotWorker.work();
+        humainWorker.eat();
+        humainWorker.work();
 
 
         /*Scanner scanner = new Scanner(System.in);
