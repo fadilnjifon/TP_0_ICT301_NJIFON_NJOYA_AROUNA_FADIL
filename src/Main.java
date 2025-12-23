@@ -1,3 +1,5 @@
+import ict301.solide.DIP.violation.MySQLDatabase;
+import ict301.solide.DIP.violation.OrderProcessor;
 import ict301.solide.ISP.solution.HumanWorkerISP;
 import ict301.solide.ISP.solution.RoboWorkerISP;
 import ict301.solide.ISP.violation.HumainWorker;
@@ -93,6 +95,12 @@ public class Main {
         humanWorkerISP.eat();
         humanWorkerISP.work();
         roboWorkerISP.work();
+
+        // Implementation du DIP avec violation
+        OrderProcessor order = new OrderProcessor();
+        order.processOrder("donnees a sauvegarder ");
+
+
 
 
         /*Scanner scanner = new Scanner(System.in);
